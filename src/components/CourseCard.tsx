@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Clock, Users, Star } from "lucide-react";
+import CoursePreview from "./CoursePreview";
 
 interface CourseCardProps {
   title: string;
@@ -53,6 +54,17 @@ const CourseCard = ({ title, description, duration, level, students, rating, pri
       </CardHeader>
       
       <CardContent className="space-y-4">
+        <CoursePreview 
+          title={title}
+          description={description}
+          duration={duration}
+          level={level}
+          students={students}
+          rating={rating}
+          features={features}
+          image={image}
+        />
+        
         <div className="space-y-2">
           {features.map((feature, index) => (
             <div key={index} className="flex items-center gap-2">
